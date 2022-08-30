@@ -2,14 +2,19 @@
 
 :root {
     --color-blue: #1992d3;
+    --color-grey: #e2e8f0;
     --font-main: 'Noto Sans', sans-serif;
 }
 
 
-.main {
+.main p {
+    font-family: var(--font-main);
+}
+
+.sidebar {
     background-color: var(--color-blue);
 }
 
-.main p {
-    font-family: var(--font-main);
+.content {
+    background-color: var(--color-grey);
 }
