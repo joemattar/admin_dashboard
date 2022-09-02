@@ -3,6 +3,7 @@
 :root {
     --color-blue: #1992d3;
     --color-grey: #e2e8f0;
+    --color-red-bulls: #cf083f;
     --font-main: 'Noto Sans', sans-serif;
 }
 
@@ -11,8 +12,15 @@
     font-family: var(--font-main);
 }
 
+.profile-pic {
+    width: 50px;
+    height: auto;
+
+    border-radius: 10px;
+}
+
 .sidebar {
-    background-color: var(--color-blue);
+    background-color: var(--color-red-bulls);
 }
 
 .content {
