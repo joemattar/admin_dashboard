@@ -29,6 +29,14 @@ button {
     border-radius: 2rem;
 }
 
+hr {
+    width: 100%;
+
+    border-style: solid;
+    border: 1px 0 0 0;
+    border-color: var(--color-grey);
+}
+
 p {
     margin: 0;
     padding: 0;
@@ -38,7 +46,7 @@ p {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(250px, 1fr) 6fr;
     grid-template-rows: auto 5fr 32px;
 }
 
@@ -135,14 +143,13 @@ p {
 .content .projects .projects-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
-    /* align-content: stretch; */
     gap: 25px;
 }
 
 .content .projects .card {
     padding: 25px;
 
-    background-color: var(--color-red-bulls);
+    background-color: var(--color-white);
 
     border-radius: 10px;
 
@@ -153,10 +160,12 @@ p {
 }
 
 .content .projects .card p {
+    color: var(--color-red-bulls);
     font-weight: 700;
 }
 
 .content .projects .card p+p {
+    color: var(--color-black);
     font-weight: 400;
     font-size: 0.85rem;
 }
@@ -166,12 +175,33 @@ p {
     align-items: center;
     justify-content: flex-end;
     gap: 25px;
-
 }
 
 .announcements {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+}
+
+.announcements .announcements-items {
+    border-radius: 10px;
+
+    padding: 25px;
+
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.announcements .announcements-items .item p {
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+.announcements .announcements-items .item p+p {
+    font-weight: 400;
 }
 
 .trending {
@@ -181,7 +211,7 @@ p {
 
 .trending .trending-topics {
     border-radius: 10px;
-    
+
     padding: 25px;
 
     background-color: var(--color-white);
