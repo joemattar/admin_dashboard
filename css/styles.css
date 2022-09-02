@@ -1,15 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+    --color-white: #ffffff;
     --color-blue: #1992d3;
     --color-grey: #e2e8f0;
     --color-red-bulls: #cf083f;
     --font-main: 'Noto Sans', sans-serif;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr 32px;
+}
 
 .main p {
     font-family: var(--font-main);
+}
+
+.main .header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.main .header>div {
+    display: flex;
+    align-items: center;
 }
 
 .profile-pic {
@@ -21,8 +49,62 @@
 
 .sidebar {
     background-color: var(--color-red-bulls);
+    color: var(--color-white);
+    padding: 15px;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+.sidebar .menu div {
+    display: flex;
+    align-items: center;
 }
 
 .content {
     background-color: var(--color-grey);
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.project {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.announcements {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.trending {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.footer {
+    font-family: var(--font-main);
+    color: var(--color-white);
+    background-color: var(--color-red-bulls);
+
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a {
+    display: grid;
+    place-content: center;    
+}
+
+.footer img {
+    width: 16px;
 }
