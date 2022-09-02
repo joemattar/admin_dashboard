@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --color-white: #ffffff;
+    --color-black: #000000;
     --color-blue: #1992d3;
     --color-grey: #e2e8f0;
     --color-red-bulls: #cf083f;
+    --color-white: #ffffff;
     --font-main: 'Noto Sans', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+button {
+    padding: 0.75rem;
+
+    width: 100px;
+
+    background-color: var(--color-red-bulls);
+    color: var(--color-white);
+
+    font-family: var(--font-main);
+    font-weight: bold;
+
+    border-style: none;
+    border-radius: 2rem;
 }
 
 p {
@@ -23,7 +39,7 @@ p {
 
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 5fr 32px;
+    grid-template-rows: auto 5fr 32px;
 }
 
 .main p {
@@ -31,13 +47,39 @@ p {
 }
 
 .main .header {
+    padding: 15px 25px;
+
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.main .header>div {
+.main .header-top {
+    
+    display: grid;
+    grid-template-columns: auto minmax(200px, 2fr) 1fr auto auto auto;
+
+    align-items: center;
+    column-gap: 50px;
+}
+
+.main .header-bottom {
+    
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+    column-gap: 50px;
+}
+
+.main .header-buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 .profile-pic {
@@ -54,6 +96,10 @@ p {
 
     grid-column: 1 / 2;
     grid-row: 1 / 4;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .sidebar .menu div {
@@ -62,7 +108,10 @@ p {
 }
 
 .content {
-    background-color: var(--color-grey);
+    padding: 25px;
+
+    background-color: var(--color-black);
+    color: var(--color-white);
 
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -72,9 +121,37 @@ p {
     grid-template-rows: 1fr 1fr;
 }
 
-.project {
+.content .projects {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+}
+
+.content .projects .projects-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+    gap: 25px;
+}
+
+.content .projects .card {
+    background-color: var(--color-red-bulls);
+
+    border-width: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--color-red-bulls);
+}
+
+.content .projects .card p {
+    font-weight: 700;
+}
+
+.content .projects .card p+p {
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.content .projects .card .engagement{
+    background-color: var(--color-white);
 }
 
 .announcements {
@@ -91,6 +168,7 @@ p {
     font-family: var(--font-main);
     color: var(--color-white);
     background-color: var(--color-red-bulls);
+    font-size: 0.8rem;
 
     grid-column: 2 / 3;
     grid-row: 3 / 4;
@@ -106,5 +184,5 @@ p {
 }
 
 .footer img {
-    width: 16px;
+    width: 1.1rem;
 }
