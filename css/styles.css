@@ -117,8 +117,14 @@ p {
     grid-row: 2 / 3;
 
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 25px;
+}
+
+.content>div {
+    display: grid;
+    grid-template-rows: 2rem 1fr;
 }
 
 .content .projects {
@@ -129,16 +135,21 @@ p {
 .content .projects .projects-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+    /* align-content: stretch; */
     gap: 25px;
 }
 
 .content .projects .card {
+    padding: 25px;
+
     background-color: var(--color-red-bulls);
 
-    border-width: 3px;
     border-radius: 10px;
-    border-style: solid;
-    border-color: var(--color-red-bulls);
+
+    display: grid;
+    grid-template-rows: 2rem 1fr 2rem;
+
+    row-gap: 15px;
 }
 
 .content .projects .card p {
@@ -151,7 +162,11 @@ p {
 }
 
 .content .projects .card .engagement{
-    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+
 }
 
 .announcements {
@@ -162,6 +177,30 @@ p {
 .trending {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+}
+
+.trending .trending-topics {
+    border-radius: 10px;
+    
+    padding: 25px;
+
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.trending .trending-topics .topic {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.trending .trending-topics img {
+    width: 4rem;
 }
 
 .footer {
